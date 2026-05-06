@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Musik · Écoute synchronisée</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎵 Musik</h1>
+    <div class="status">
+      <span id="connection-dot" class="dot" title="Déconnecté"></span>
+      <span id="user-count">🎧 0</span>
+    </div>
+  </header>
+
+  <div id="join-overlay">
+    <div class="join-card">
+      <h2>🎧 Prêt à écouter ?</h2>
+      <p>Clique pour rejoindre la session synchronisée.<br>(Nécessaire pour autoriser le son)</p>
+      <button id="join-btn">Rejoindre la session</button>
+    </div>
+  </div>
+
+  <main>
+    <div class="input-row">
+      <input
+        type="text"
+        id="url-input"
+        placeholder="Colle un lien YouTube (youtube.com/watch?v=… ou youtu.be/…)"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button id="load-btn">Charger</button>
+    </div>
+
+    <div id="player-wrap">
+      <div id="player"></div>
+      <p id="empty-state">Aucune vidéo chargée. Colle un lien YouTube ci-dessus pour démarrer.</p>
+    </div>
+
+    <p class="hint">Tout le monde sur cette page écoute la même chose, en même temps.</p>
+  </main>
+
+  <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
